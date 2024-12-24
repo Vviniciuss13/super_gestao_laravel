@@ -34,7 +34,6 @@
             Última iteração do loop
 
             <br>
-
             Total de registros: {{ $loop->count}}
         @endif
         <hr>
