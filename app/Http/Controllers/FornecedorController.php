@@ -13,6 +13,8 @@ class FornecedorController extends Controller
             2 => ['nome' => 'Fornecedor 3', 'status' => 'S', 'cnpj' => null, 'ddd' => '32', 'telefone' => '0000-0000'],  //Juiz de Fora (MG)      
         ];
 
+        $fornecedores = [];
+
         $msg = isset($fornecedores[0]['cnpj']) ? 'CNPJ informado' : 'CNPJ não informado';
         echo $msg;
 
