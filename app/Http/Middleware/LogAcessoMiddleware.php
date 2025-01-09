@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\LogAcesso;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,6 +19,10 @@ class LogAcessoMiddleware
         // request - manipular
         //return $next($request);
         // response - manipular
+
+        $ip = $request->server->get('REMOTE_ADDR');
+        $rota = $request->getRequestUri();
+        LogAcesso::create(['log' => "$ip xyz requisitou a rota $rota"]);
         return Response('Chegamos no middleware e finalizamos no próprio middleware');
     }
 }
